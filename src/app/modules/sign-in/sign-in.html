@@ -1,0 +1,14 @@
+@if (status) {
+    <div class="main">
+        <img src="AFWF-whitout_background.png" height="200px" width="400px">
+        <form [formGroup]="form" action="get">
+            <label for="username">Usuario*</label>
+            <input type="text" name="username" formControlName="username">
+
+            <label for="password">Contrasena*</label>
+            <input type="password" name="password" formControlName="password">
+
+            <button type="button" [disabled]="!form.valid" (click)="SignIn()">Iniciar sesion</button>
+        </form>
+    </div>
+}
