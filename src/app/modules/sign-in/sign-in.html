@@ -1,0 +1,12 @@
+@if (status) {
+    <div class="main">
+        <img src="AFWF-whitout_background.png" height="200px" width="400px">
+        <form [formGroup]="form" (ngSubmit)="SignIn()">
+            <input class="form-control" type="text" name="username" formControlName="username" placeholder="username">
+
+            <input class="form-control" type="password" name="password" formControlName="password" placeholder="password">
+
+            <button type="submit" class="btn btn-primary" [disabled]="!form.valid">Iniciar sesion</button>
+        </form>
+    </div>
+}

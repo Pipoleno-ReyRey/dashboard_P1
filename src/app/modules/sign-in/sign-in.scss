@@ -1,0 +1,21 @@
+
+input{
+	width: 20em;
+	height: 35px;
+	background: #e0dede;
+    border: 3 solid rgb(93, 158, 212);
+	justify-content: center;
+	display: flex;
+    margin-bottom: 15%;
+	border-radius: 5px;
+}
+
+.main{
+    height: 50em;
+    background: white;
+    display: flex;
+	justify-content: center;
+	align-items: center;
+    flex-direction: column;
+    margin: auto;
+}
