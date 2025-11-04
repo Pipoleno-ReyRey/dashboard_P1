@@ -12,7 +12,6 @@ import { NgIf } from '@angular/common';
     ReactiveFormsModule,
     FormsModule,
     MatFormFieldModule,
-    NgIf
 ],
   templateUrl: './sign-in.html',
   styleUrl: './sign-in.scss',
@@ -41,6 +40,7 @@ export class SignIn {
 
     this.serviceStatus.changeStatus(false, "signIn");
 
-    console.log(`usuario: ${this.username} | password: ${this.password} y el status paso: ${this.status}`);
+    localStorage.setItem("username", this.username);
+    localStorage.setItem("password", this.password);
   }
 }
