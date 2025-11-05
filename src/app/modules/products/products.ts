@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ProductsService } from '../../services/products-service';
 
 @Component({
   selector: 'app-products',
@@ -7,5 +8,13 @@ import { Component } from '@angular/core';
   styleUrl: './products.scss',
 })
 export class Products {
+
+  status: boolean = false;
+  products!: Products[];
+  searchParam!: string;
+
+  constructor(private readonly productsService: ProductsService){
+    
+  }
 
 }
