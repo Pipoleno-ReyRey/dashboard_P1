@@ -5,6 +5,7 @@ export class Product {
     bigItem!: boolean;
     matnr!: string;
     infiniteStock!: boolean;
-    offShops!: string[];
+    disabledShops!: string[];
     status!: boolean;
+    price!: number;
 }

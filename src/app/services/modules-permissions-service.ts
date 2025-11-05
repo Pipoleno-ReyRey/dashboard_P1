@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { ModulePermission } from '../classes/module-permission';
+import { ModulePermission } from '../models/module-permission';
 
 @Injectable({
   providedIn: 'root',

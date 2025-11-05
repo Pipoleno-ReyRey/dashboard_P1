@@ -2,3 +2,8 @@
 
 /* Importing Bootstrap SCSS file. */
 @import 'bootstrap/scss/bootstrap';
+// Source - https://stackoverflow.com/questions/60365440/how-to-programmatically-use-bootstrap-icons-in-an-angular-project
+// Posted by BBoom
+// Retrieved 5/11/2025, License - CC-BY-SA 4.0
+
+@import "bootstrap-icons/font/bootstrap-icons.css";
