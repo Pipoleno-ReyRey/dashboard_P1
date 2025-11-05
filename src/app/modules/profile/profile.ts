@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { ModulesStatus } from '../../services/modules-status';
-import { ModulePermission } from '../../classes/module-permission';
+import { ModulePermission } from '../../models/module-permission';
 import { ModulesPermissionsService } from '../../services/modules-permissions-service';
+import { Products } from "../products/products";
 
 @Component({
   selector: 'app-profile',
-  imports: [],
+  imports: [Products],
   templateUrl: './profile.html',
   styleUrl: './profile.scss',
 })
@@ -33,4 +34,7 @@ export class Profile implements OnInit{
   ngOnInit(): void {
   }
 
+  viewModules(module: string){
+    this.statusModule.changeStatus(true, module);
+  }
 }

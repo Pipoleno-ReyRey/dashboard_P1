@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ProductsService } from '../../services/products-service';
+import { Product } from '../../models/product';
 
 @Component({
   selector: 'app-products',
@@ -10,11 +11,16 @@ import { ProductsService } from '../../services/products-service';
 export class Products {
 
   status: boolean = false;
-  products!: Products[];
+  productsList!: Product[];
   searchParam!: string;
+  productsCount!: number;
 
   constructor(private readonly productsService: ProductsService){
-    
+    this.productsService.productsCount.subscribe( count => {
+      this.productsCount = count;
+    })
   }
+
+  
 
 }
