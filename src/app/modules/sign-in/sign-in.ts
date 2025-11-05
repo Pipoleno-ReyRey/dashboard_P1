@@ -1,17 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, Inject, inject, PLATFORM_ID } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
-import { MatFormFieldControl, MatFormFieldModule, MatLabel } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import { Observable } from 'rxjs';
 import { ModulesStatus } from '../../services/modules-status';
-import { NgIf } from '@angular/common';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
+import { ModulesPermissionsService } from '../../services/modules-permissions-service';
 
 @Component({
   selector: 'app-sign-in',
   imports: [
     ReactiveFormsModule,
     FormsModule,
-    MatFormFieldModule,
+    NgbModule
 ],
   templateUrl: './sign-in.html',
   styleUrl: './sign-in.scss',
@@ -23,7 +21,7 @@ export class SignIn {
   username!: string;
   password!: string;
 
-  constructor(private readonly serviceStatus: ModulesStatus){
+  constructor(private readonly serviceStatus: ModulesStatus, private readonly modules: ModulesPermissionsService){
     this.form = new FormGroup({
       username: new FormControl("", [Validators.required, Validators.minLength(1)]),
       password: new FormControl("", [Validators.required, Validators.minLength(1)])
@@ -40,7 +38,6 @@ export class SignIn {
 
     this.serviceStatus.changeStatus(false, "signIn");
 
-    localStorage.setItem("username", this.username);
-    localStorage.setItem("password", this.password);
+    this.modules.username.next(this.username);
   }
 }

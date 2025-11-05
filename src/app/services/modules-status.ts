@@ -18,6 +18,7 @@ export class ModulesStatus {
     switch(module){
       case "signIn": 
         this.signIn.next(newStatus);
+        this.profile.next(true)
         break;
       case "profile": 
         this.profile.next(newStatus);
