@@ -44,16 +44,15 @@ To execute unit tests with the [Karma](https://karma-runner.github.io) test runn
 ng test
 ```
 
-## Running end-to-end tests
+## Project structure
 
-For end-to-end (e2e) testing, run:
+Fields structure:
 
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+`public/` : Visual elements (images, icons, etc..)
+`src/app/`: Components, modules, services, models; app logic
+    `models`: Data models, DTOs
+    `components`: app individual's components and herarchy structure
+        `login/`: Login user components (sign in, reset in, etc..)
+        `pages/`: profile and user components post login
+        `generyc-components/`: generic components used in multiple points (search-inputs, details, etc..)
+    `services`: Services used in all app, status, data, http connections
