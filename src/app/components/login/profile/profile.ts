@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ModulesStatus } from '../../services/modules-status';
-import { ModulePermission } from '../../models/module-permission';
-import { ModulesPermissionsService } from '../../services/modules-permissions-service';
-import { Products } from "../products/products";
+import { ModulesStatus } from '../../../services/modules-status';
+import { ModulePermission } from '../../../models/module-permission';
+import { ModulesPermissionsService } from '../../../services/modules-permissions-service';
+import { Products } from '../../userModules/products/products';
+
 
 @Component({
   selector: 'app-profile',
