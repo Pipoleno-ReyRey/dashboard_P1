@@ -1,8 +1,8 @@
 import { Component, Inject, inject, PLATFORM_ID } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
-import { ModulesStatus } from '../../services/modules-status';
+import { ModulesStatus } from '../../../services/modules-status';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
-import { ModulesPermissionsService } from '../../services/modules-permissions-service';
+import { ModulesPermissionsService } from '../../../services/modules-permissions-service';
 
 @Component({
   selector: 'app-sign-in',
