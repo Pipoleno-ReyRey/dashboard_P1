@@ -49,10 +49,19 @@ ng test
 Fields structure:
 
 `public/` : Visual elements (images, icons, etc..)
+
 `src/app/`: Components, modules, services, models; app logic
+    
     `models`: Data models, DTOs
+    
+    
     `components`: app individual's components and herarchy structure
+    
         `login/`: Login user components (sign in, reset in, etc..)
+    
         `pages/`: profile and user components post login
+    
         `generyc-components/`: generic components used in multiple points (search-inputs, details, etc..)
+    
+    
     `services`: Services used in all app, status, data, http connections
