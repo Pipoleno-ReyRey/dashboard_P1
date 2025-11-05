@@ -56,10 +56,10 @@ Fields structure:
 
 `components/`: app individual's components and herarchy structure
 
-   `login/`: Login user components (sign in, reset in, etc..)
+--- `login/`: Login user components (sign in, reset in, etc..)
 
-   `user-pages/`: profile and user components post login
+--- `user-pages/`: profile and user components post login
 
-   `generyc-components/`: generic components used in multiple points (search-inputs, details, etc..)
+--- `generyc-components/`: generic components used in multiple points (search-inputs, details, etc..)
 
 `services/`: Services used in all app, status, data, http connections
