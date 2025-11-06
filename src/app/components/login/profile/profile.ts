@@ -1,35 +1,30 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, input, Input, OnInit } from '@angular/core';
 import { ModulesStatus } from '../../../services/modules-status';
 import { ModulePermission } from '../../../models/module-permission';
 import { ModulesPermissionsService } from '../../../services/modules-permissions-service';
 import { Products } from '../../user-pages/products/products';
+import { user } from '../../../models/users';
+import { Orders } from "../../user-pages/orders/orders";
+import { Sets } from "../../user-pages/sets/sets";
 
 
 @Component({
   selector: 'app-profile',
-  imports: [Products],
+  imports: [Products, Orders, Sets],
   templateUrl: './profile.html',
   styleUrl: './profile.scss',
 })
 export class Profile implements OnInit{
 
-  username!: string | null;
-  role!: string;
-  status: boolean = false;
-  welcome: boolean = false
-  modules!: ModulePermission[];
+  @Input() signIn: boolean = false;
+  user!: user;
+  welcome: boolean = true;
+  module!: string;
   
   constructor(private readonly statusModule: ModulesStatus, private readonly permissionService: ModulesPermissionsService){
-    this.statusModule.profile.subscribe(status => {
-      this.status = status;
-      this.welcome = status;
-    });
-    this.permissionService.modules.subscribe(modules => {
-      this.modules = modules;
-    });
-    this.permissionService.username.subscribe( username => {
-      this.username = username;
-    });
+    this.permissionService.user.subscribe( user => {
+      this.user = user;
+    })
   }
 
   ngOnInit(): void {
@@ -37,5 +32,7 @@ export class Profile implements OnInit{
 
   viewModules(module: string){
     this.statusModule.changeStatus(true, module);
+    this.module = module;
+    this.welcome = false;
   }
 }

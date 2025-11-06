@@ -4,6 +4,7 @@ export class ModulePermission {
     available!: boolean;
 
     constructor(icon: string, module: string){
+        this.iconSrc = icon;
         this.module = module;
         this.available = true;
     }

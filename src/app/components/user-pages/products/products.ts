@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
-import { ProductsService } from '../../../services/products-service';
+import { ProductsService } from '../../../services/modules-services/products-service';
 import { Product } from '../../../models/product';
+import { SearchingBar } from "../../generyc-components/searching-bar/searching-bar";
 
 @Component({
   selector: 'app-products',
-  imports: [],
+  imports: [SearchingBar],
   templateUrl: './products.html',
   styleUrl: './products.scss',
 })

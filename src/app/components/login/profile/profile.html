@@ -1,23 +1,44 @@
-@if (welcome) {
+@if (signIn) {
     <div style="background-color: rgb(203, 203, 204); height: 100%; width: 100%;">
-        @if (status) {
             <div class="profile_module">
                 <img src="user.png" width="130px" height="130px" style="margin-top: 3em; margin-bottom: 1em;">
-                <h4 class="h4">{{username}}</h4>
-                <h5 class="text-body-secondary">{{role}}</h5>
+                <h4 class="h4">{{user.username}}</h4>
+                <h5 class="text-body-secondary">{{user.role}}</h5>
                 
                 <h3 class="h3">Modulos</h3>
-                @for (item of modules; track $index) {
+                @for (item of user.modules; track $index) {
                     <button class="btn btn-outline-info" 
-                        style="width: 15em; border: 2px solid black; margin: 3em;"
-                        (click)="viewModules(item.module)">
-                        <img [src]="item.iconSrc">  {{item.module}} > 
+                        style="width: 15em; border: 2px solid black; margin-top: 3em; height: 3em;"
+                        (click)="viewModules(item.module)" >
+                        <img [src]="item.iconSrc" alt="" width="25px" height="25px">  {{item.module}} > 
                     </button>
                 }
             </div>
+        @if (welcome) {
+            <div style="width: 80% ;display: inline-block; text-align: center;">
+                <h1 class="display-1">Welcome</h1>
+            </div>
+        } @else {
+            @switch (module) {
+                @case ("products") {
+                    <div style="width: 80% ;display: inline-block;">
+                        <app-products></app-products>
+                    </div>
+                }
+
+                @case ("orders") {
+                    <div style="width: 80% ;display: inline-block;">
+                        <app-orders></app-orders>
+                    </div>
+                }
+
+                @case ("sets") {
+                    <div style="width: 80% ;display: inline-block;">
+                        <app-sets></app-sets>
+                    </div>
+                }
+            }
         }
-        <div style="width: 80% ;display: inline-block;">
-            <app-products style="text-align: center;"></app-products>
-        </div>
+
     </div>
 }

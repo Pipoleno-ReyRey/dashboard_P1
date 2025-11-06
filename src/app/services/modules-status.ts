@@ -9,6 +9,8 @@ export class ModulesStatus {
   profile: BehaviorSubject<boolean> = new BehaviorSubject(false);
   details: BehaviorSubject<boolean> = new BehaviorSubject(false);
   productsModule: BehaviorSubject<boolean> = new BehaviorSubject(false);
+  ordersModule: BehaviorSubject<boolean> = new BehaviorSubject(false);
+  setsModule: BehaviorSubject<boolean> = new BehaviorSubject(false);
   signIn: BehaviorSubject<boolean> = new BehaviorSubject(true);
   
   constructor(){
@@ -29,6 +31,8 @@ export class ModulesStatus {
         break;
       case "products":
         this.productsModule.next(newStatus);
+        this.ordersModule.next(false);
+        this.setsModule.next(false);
         break;
     }
     
