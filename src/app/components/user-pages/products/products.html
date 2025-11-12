@@ -1,34 +1,37 @@
-<div>
-    <app-searching-bar module="productos" placeholder="sku, material o titulo" ></app-searching-bar>
+<div style="display: inline-block; height: 80dvb; margin: 20px;">
+    <app-searching-bar module="productos" placeholder="sku, material o titulo"></app-searching-bar>
 
 <h1>Cantidad de productos: {{productsCount}}</h1>
 <hr>
 @if (status) {
-    <table class="table">
-    <thead>
-        <th>imagen</th>
-        <th>sku</th>
-        <th>titulo</th>
-        <th>precio</th>
-        <th>status</th>
-    </thead>
-    <tbody>
-        @for (product of productsList; track $index) {
-            <tr class="table-info">
-                <td><img [src]="product.img" width="30px" height="30px"></td>
-                <td><strong>{{product.sku}}</strong></td>
-                <td><strong>{{product.title}}</strong></td>
-                <td><strong>${{product.price}}</strong></td>
-                @if (product.status) {
-                    <i class="bi bi-check2"></i>
-                } @else {
-                    <i class="bi bi-x-lg"></i>
-                }
+    <div>
+        <table class="table">
+        <thead>
+            <th>imagen</th>
+            <th>sku</th>
+            <th>titulo</th>
+            <th>precio</th>
+            <th>status</th>
+        </thead>
+        <tbody>
+            @for (product of productsList; track $index) {
+                <tr class="table-info">
+                    <td><img [src]="product.img" width="30px" height="30px"></td>
+                    <td><strong>{{product.sku}}</strong></td>
+                    <td><strong>{{product.title}}</strong></td>
+                    <td><strong>${{product.price}}</strong></td>
+                    @if (product.status) {
+                        <i class="bi bi-check2"></i>
+                    } @else {
+                        <i class="bi bi-x-lg"></i>
+                    }
 
-                <button type="button" class="btn btn-outline-success">Details</button>
-            </tr>
-        }
-    </tbody>
-</table>
+                    <button type="button" class="btn btn-outline-success">Details</button>
+                </tr>
+            }
+        </tbody>
+    </table>
+    </div>
 }
 </div>
+
