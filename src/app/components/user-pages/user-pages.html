@@ -1,0 +1,31 @@
+<div style="width: 80%; display: inline-block; height: 80dvb;">
+    @if (welcome) {
+            <div style="width: 80% ;display: inline-block; text-align: center;">
+                <h1 class="display-1">Welcome</h1>
+                <div style="width: 80%; display: inline-block; height: 40dvb;"></div>
+            </div>
+        } @else {
+            @switch (module) {
+                @case ("products") {
+                    <div style="width: 80% ;display: inline-block;">
+                        <app-products></app-products>
+                        <div style="width: 80%; display: inline-block; height: 40dvb;"></div>
+                    </div>
+                }
+
+                @case ("orders") {
+                    <div style="width: 80% ;display: inline-block;">
+                        <app-orders></app-orders>
+                        <div style="width: 80%; display: inline-block; height: 40dvb;"></div>
+                    </div>
+                }
+
+                @case ("sets") {
+                    <div style="width: 80% ;display: inline-block;">
+                        <app-sets></app-sets>
+                        <div style="width: 80%; display: inline-block; height: 40dvb;"></div>
+                    </div>
+                }
+            }
+        }
+</div>

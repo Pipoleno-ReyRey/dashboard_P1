@@ -1,5 +1,6 @@
 @if (signIn) {
-    <div style="background-color: rgb(203, 203, 204); height: 100%; width: 100%;">
+    <div style="background-color: rgb(252, 252, 255); height: 100dvb; width: 100%; display: inline-block;">
+
             <div class="profile_module">
                 <img src="user.png" width="130px" height="130px" style="margin-top: 3em; margin-bottom: 1em;">
                 <h4 class="h4">{{user.username}}</h4>
@@ -14,31 +15,8 @@
                     </button>
                 }
             </div>
-        @if (welcome) {
-            <div style="width: 80% ;display: inline-block; text-align: center;">
-                <h1 class="display-1">Welcome</h1>
-            </div>
-        } @else {
-            @switch (module) {
-                @case ("products") {
-                    <div style="width: 80% ;display: inline-block;">
-                        <app-products></app-products>
-                    </div>
-                }
 
-                @case ("orders") {
-                    <div style="width: 80% ;display: inline-block;">
-                        <app-orders></app-orders>
-                    </div>
-                }
-
-                @case ("sets") {
-                    <div style="width: 80% ;display: inline-block;">
-                        <app-sets></app-sets>
-                    </div>
-                }
-            }
-        }
+            <app-user-pages [welcome]="welcome" [module]="module"></app-user-pages>
 
     </div>
 }

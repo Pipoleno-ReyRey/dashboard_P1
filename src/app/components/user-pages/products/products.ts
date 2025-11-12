@@ -11,7 +11,7 @@ import { SearchingBar } from "../../generyc-components/searching-bar/searching-b
 })
 export class Products {
 
-  status: boolean = false;
+  status: boolean = true;
   productsList!: Product[];
   searchParam!: string;
   productsCount!: number;

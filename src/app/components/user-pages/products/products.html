@@ -1,23 +1,24 @@
-<app-searching-bar module="productos" placeholder="sku, material o titulo" ></app-searching-bar>
+<div>
+    <app-searching-bar module="productos" placeholder="sku, material o titulo" ></app-searching-bar>
 
 <h1>Cantidad de productos: {{productsCount}}</h1>
 <hr>
 @if (status) {
     <table class="table">
     <thead>
-        <th scope="col">imagen</th>
-        <th scope="col">sku</th>
-        <th scope="col">titulo</th>
-        <th scope="col">precio</th>
-        <th scope="col">status</th>
+        <th>imagen</th>
+        <th>sku</th>
+        <th>titulo</th>
+        <th>precio</th>
+        <th>status</th>
     </thead>
     <tbody>
         @for (product of productsList; track $index) {
             <tr class="table-info">
-                <th scope="row"><img [src]="product.img" width="50px" height="50px"></th>
+                <td><img [src]="product.img" width="30px" height="30px"></td>
                 <td><strong>{{product.sku}}</strong></td>
                 <td><strong>{{product.title}}</strong></td>
-                <td><strong>{{product.price}}</strong></td>
+                <td><strong>${{product.price}}</strong></td>
                 @if (product.status) {
                     <i class="bi bi-check2"></i>
                 } @else {
@@ -30,3 +31,4 @@
     </tbody>
 </table>
 }
+</div>
