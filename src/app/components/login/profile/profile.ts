@@ -10,7 +10,7 @@ import { UserPages } from "../../user-pages/user-pages";
 
 @Component({
   selector: 'app-profile',
-  imports: [Products, Orders, Sets, UserPages],
+  imports: [UserPages],
   templateUrl: './profile.html',
   styleUrl: './profile.scss',
 })

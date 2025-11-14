@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ProductsService } from '../../../services/modules-services/products-service';
 import { Product } from '../../../models/product';
 import { SearchingBar } from "../../generyc-components/searching-bar/searching-bar";
+import { timeInterval } from 'rxjs';
 
 @Component({
   selector: 'app-products',
@@ -19,9 +20,9 @@ export class Products {
   constructor(private readonly productsService: ProductsService){
     this.productsService.productsCount.subscribe( count => {
       this.productsCount = count;
-    })
+    });
+
+    this.productsService.getCount();
+
   }
-
-  
-
 }

@@ -1,9 +1,14 @@
 .table{
     display: inline-block;
-    width: 90em;
-    height: 40em;
+    width: 150dvb;
+    height: 80dvb;
     border: 2px solid black;
     border-radius: 5px;
     margin-top: 2em;
     margin-left: 2em;
+}
+
+th {
+    padding-left: 100px;
+    padding-right: 100px;
 }
