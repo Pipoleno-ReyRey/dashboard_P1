@@ -21,15 +21,10 @@ export class SearchingBar {
   constructor(
     private readonly productService: ProductsService, 
     private readonly orderService: OrdersService){
-    
-    this.productService.param.subscribe( param => {
-      this.searchParam = param;
-    })
 
   }
 
   search(){
-    this.productService.param.next(this.searchParam);
-    this.productService.search();
+    this.productService.search(this.searchParam);
   }
 }

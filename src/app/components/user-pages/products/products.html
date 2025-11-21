@@ -4,7 +4,7 @@
 <h1>Cantidad de productos: {{productsCount}}</h1>
 <hr>
 @if (status) {
-    <div>
+    <!-- <div>
         <table class="table">
         <thead>
             <th>imagen</th>
@@ -16,22 +16,14 @@
         <tbody>
             @for (product of productsList; track $index) {
                 <tr class="table-info">
-                    <td><img [src]="product.img" width="30px" height="30px"></td>
-                    <td><strong>{{product.sku}}</strong></td>
                     <td><strong>{{product.title}}</strong></td>
-                    <td><strong>${{product.price}}</strong></td>
-                    @if (product.status) {
-                        <i class="bi bi-check2"></i>
-                    } @else {
-                        <i class="bi bi-x-lg"></i>
-                    }
-
-                    <button type="button" class="btn btn-outline-success">Details</button>
-                </tr>
+                    <!-- <button type="button" class="btn btn-outline-success">Details</button> -->
+                <!-- </tr>
             }
         </tbody>
     </table>
-    </div>
+    </div> -->
+    
 }
 </div>
 

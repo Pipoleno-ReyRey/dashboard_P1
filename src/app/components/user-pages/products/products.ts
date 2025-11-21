@@ -24,5 +24,8 @@ export class Products {
 
     this.productsService.getCount();
 
+    this.productsService.products.subscribe( products => {
+      this.productsList = products;
+    });
   }
 }
