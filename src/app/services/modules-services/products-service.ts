@@ -18,10 +18,8 @@ export class ProductsService {
     this.productsCount = new BehaviorSubject(0);
   }
 
-  getCount(){
-    this.http.get<number>("http://localhost:6512/products/data/count").subscribe(data => {
-      this.productsCount.next(data);
-      console.log(data);
+  async getCount(){
+    await this.http.get<number>("http://localhost:6512/products/data/count").subscribe(data => {
       this.productsCount.next(data);
     });
   }
@@ -30,10 +28,11 @@ export class ProductsService {
     await this.http.get<Product[]>(`http://localhost:6512/products/${param}`).subscribe(products => {
 
       this.products.next(products);;
-      
+
       console.log(this.products.getValue());
+      
+      this.productsCount.next(this.products.getValue().length);
     });
 
-    console.log(this.products.getValue().length);
   }
 }
