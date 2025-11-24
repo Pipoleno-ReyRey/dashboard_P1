@@ -3,10 +3,11 @@ import { ProductsService } from '../../../services/modules-services/products-ser
 import { Product } from '../../../models/product';
 import { SearchingBar } from "../../generyc-components/searching-bar/searching-bar";
 import { timeInterval } from 'rxjs';
+import { ProductCard } from "../../generyc-components/product-card/product-card";
 
 @Component({
   selector: 'app-products',
-  imports: [SearchingBar],
+  imports: [SearchingBar, ProductCard],
   templateUrl: './products.html',
   styleUrl: './products.scss',
 })

@@ -1,28 +1,21 @@
 <div style="display: flexbox; height: 80dvb; margin: 10px;">
     <app-searching-bar module="productos" placeholder="sku, material o titulo"></app-searching-bar>
 
-<h1>Cantidad de productos: {{productsCount}}</h1>
-<hr>
+<h3>Cantidad de productos: {{productsCount}}</h3>
+
 @if (status) {
-    <!-- <div>
-        <table class="table">
-        <thead>
-            <th>imagen</th>
-            <th>sku</th>
-            <th>titulo</th>
-            <th>precio</th>
-            <th>status</th>
-        </thead>
-        <tbody>
-            @for (product of productsList; track $index) {
-                <tr class="table-info">
-                    <td><strong>{{product.title}}</strong></td>
-                    <!-- <button type="button" class="btn btn-outline-success">Details</button> -->
-                <!-- </tr>
-            }
-        </tbody>
-    </table>
-    </div> -->
+    
+    <div style="width: 100%; height: 90dvb; overflow-y: scroll;">
+        @for (product of productsList; track $index) {
+            <app-product-card 
+                [img]="product.img" 
+                [sku]="product.sku" 
+                [title]="product.title" 
+                [price]="product.price" 
+                [status]="product.status">
+            </app-product-card>
+        }
+    </div>
     
 }
 </div>

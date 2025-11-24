@@ -1,0 +1,18 @@
+<div class="card" style="width: 20rem; display: inline-block; margin: 5px;">
+    <img src="{{img}}" alt="" class="card-img-top" style="width: 10rem; height: 10rem;">
+    <div class="card-body">
+        <p>{{sku}}</p>
+        <p>{{title}}</p>
+        <p>{{price}}</p>
+        <div class="form-check form-switch">
+            @if (status == true) {
+                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
+            } @else {
+                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked">
+            }
+            <label class="form-check-label">Estado</label>
+        </div>
+        
+        <button class="btn btn-primary">Actualizar</button>
+    </div>
+</div>

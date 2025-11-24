@@ -13,7 +13,7 @@ export class ProductsService {
   productsCount!: BehaviorSubject<number>;
 
   constructor(private readonly http: HttpClient){
-    this.products = new BehaviorSubject([new Product()]);
+    this.products = new BehaviorSubject<Product[]>([]);
     this.product = new BehaviorSubject(new Product());
     this.productsCount = new BehaviorSubject(0);
   }
@@ -26,16 +26,10 @@ export class ProductsService {
     });
   }
 
-  search(param: string){
-    this.http.get<string[]>(`http://localhost:6512/products/${param}`).subscribe(products => {
-      let searchedProducts: Product[] = [];
+  async search(param: string){
+    await this.http.get<Product[]>(`http://localhost:6512/products/${param}`).subscribe(products => {
 
-      products.map((p) => {
-        let product: Product = new Product();
-        product.title = p; 
-        searchedProducts.push(product)});
-
-      this.products.next(searchedProducts);;
+      this.products.next(products);;
       
       console.log(this.products.getValue());
     });

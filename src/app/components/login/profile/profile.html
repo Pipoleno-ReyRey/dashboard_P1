@@ -9,7 +9,7 @@
                 <h3 class="h3">Modulos</h3>
                 @for (item of user.modules; track $index) {
                     <button class="btn btn-outline-info" 
-                        style="width: 15em; border: 2px solid black; margin-top: 3em; height: 3em;"
+                        style="width: 10em; border: 2px solid black; margin-top: 3em; height: 3em;"
                         (click)="viewModules(item.module)" >
                         <img [src]="item.iconSrc" alt="" width="25px" height="25px">  {{item.module}} > 
                     </button>
