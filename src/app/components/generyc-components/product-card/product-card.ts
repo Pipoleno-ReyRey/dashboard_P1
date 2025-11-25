@@ -1,16 +1,39 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ProductsService } from '../../../services/modules-services/products-service';
+import { Product } from '../../../models/product';
+import { FormControl, FormGroup, ɵInternalFormsSharedModule, ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-product-card',
-  imports: [],
+  imports: [ɵInternalFormsSharedModule, ReactiveFormsModule, FormsModule],
   templateUrl: './product-card.html',
   styleUrl: './product-card.scss',
 })
-export class ProductCard {
+export class ProductCard implements OnInit{
 
-  @Input("img") img!: string;
-  @Input("sku") sku!: string;
-  @Input("title") title!: string;
-  @Input("price") price!: number;
-  @Input("status") status!: boolean;
+  @Input("product") product!: Product;
+  status: boolean = true;
+
+  constructor(private readonly productService: ProductsService){
+    // if(this.product.borrado == 0){
+    //   this.status = true;
+    // } else {
+    //   this.status = false;;
+    // }
+  }
+
+  ngOnInit(): void {
+    if(this.product.borrado == 0){
+      this.status = true;
+    } else {
+      this.status = false;;
+    }
+  }
+
+
+  async update(){
+    this.product.borrado = this.status ? 0 : 1;
+    console.log(this.product.borrado);
+    await this.productService.updateProduct(this.product);
+  }
 }
