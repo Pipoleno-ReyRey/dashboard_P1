@@ -4,11 +4,17 @@
         <p>{{product.sku}}</p>
         <p>{{product.title}}</p>
         <p>${{product.price}}</p>
-        <div class="form-check form-switch">
+        <div class="form-check form-switch" style="margin-bottom: 10px;">
             <input class="form-check-input" type="checkbox" role="switch" [(ngModel)]="status">
             <label class="form-check-label">Activo</label>
         </div>
         
-        <button class="btn btn-primary" (click)="update()">Actualizar</button>
+        <button style="border: 0px; background-color: rgba(240, 248, 255, 0);">
+            <img src="refresh.svg" width="30px" height="30px" (click)="update()">
+        </button>
+        <button style="border: 0px; background-color: rgba(240, 248, 255, 0);"> 
+            <img src="details.svg" width="30px" height="30px" style="margin-left: 70%;">
+        </button>
+        
     </div>
 </div>

@@ -1,1 +1,18 @@
-<p>details works!</p>
+<div style="width: 50dvb; margin: 10em;">
+    <header style="background-color: mediumseagreen; width: 100%;">
+
+    </header>
+
+    <div>
+        <img src="{{product.img}}" width="300px" height="400px">
+        <p>sku: {{product.sku}}</p>
+        <form [formGroup]="formData">
+            <label for="">Titulo</label>
+            <input type="text" formControlName="title">
+        </form>
+    </div>
+
+    <footer>
+
+    </footer>
+</div>

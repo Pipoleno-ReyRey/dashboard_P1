@@ -14,13 +14,7 @@ export class ProductCard implements OnInit{
   @Input("product") product!: Product;
   status: boolean = true;
 
-  constructor(private readonly productService: ProductsService){
-    // if(this.product.borrado == 0){
-    //   this.status = true;
-    // } else {
-    //   this.status = false;;
-    // }
-  }
+  constructor(private readonly productService: ProductsService){}
 
   ngOnInit(): void {
     if(this.product.borrado == 0){
@@ -33,7 +27,7 @@ export class ProductCard implements OnInit{
 
   async update(){
     this.product.borrado = this.status ? 0 : 1;
-    console.log(this.product.borrado);
+    console.log(this.product);
     await this.productService.updateProduct(this.product);
   }
 }

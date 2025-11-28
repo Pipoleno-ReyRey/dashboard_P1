@@ -1,7 +1,13 @@
 export class Product {
     sku!: string;
     title!: string;
+    description!: string;
     img!: string;
-    status!: boolean;
+    bigItem!: boolean;
+    borrado!: number;
     price!: number;
+    desactivatedStores!: string;
+    group!: string;
+    undefinedStock!: number;
+    securityStock!: number;
 }

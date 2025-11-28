@@ -29,10 +29,13 @@ export class ProductsService {
 
       this.products.next(products);;
 
-      console.log(this.products.getValue());
       
       this.productsCount.next(this.products.getValue().length);
     });
 
+  }
+
+  async updateProduct(product: Product){
+    await this.http.put("http://localhost:6512/products/update", product);
   }
 }
