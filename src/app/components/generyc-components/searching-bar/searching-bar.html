@@ -1,7 +1,7 @@
 <div style="margin: 0% auto; display: inline; text-align: center;">
-    <form>
+    <form (submit)="search()">
         <input type="text" name="search" [placeholder]="placeholder" class="form-control" [(ngModel)]="searchParam"
         style="display: inline; background-image: url(search.png); width: 25em; background-repeat: no-repeat; padding-left: 50px; background-position: 10px; margin-right: 10px;">
-        <button type="button" class="btn btn-success" (click)="search()">Buscar</button>
+        <button type="submit" class="btn btn-success">Buscar</button>
     </form>
 </div>

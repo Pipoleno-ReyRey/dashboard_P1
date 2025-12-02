@@ -1,7 +1,8 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Product } from '../../../models/product';
 import { FormControl, FormGroup, NgModel, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ProductsService } from '../../../services/modules-services/products-service';
+import { ModulesStatus } from '../../../services/modules-status';
 
 @Component({
   selector: 'app-details',
@@ -9,19 +10,35 @@ import { ProductsService } from '../../../services/modules-services/products-ser
   templateUrl: './details.html',
   styleUrl: './details.scss',
 })
-export class Details {
+export class Details implements OnInit{
 
-  @Input("product") product: Product = new Product();
+  product!: Product;
   formData!: FormGroup;
+  status!: boolean;
 
-  constructor(private readonly productService: ProductsService){
+  constructor(private readonly productService: ProductsService, private readonly module: ModulesStatus){
+
+    this.productService.product.subscribe( product => {
+      this.product = product;
+    });
+
+    this.module.details.subscribe( status => {
+      this.status = status;
+    });
+
+    console.log(this.status);
+  }
+
+  ngOnInit(): void {
+
     this.formData = new FormGroup({
       title: new FormControl(this.product.title, [Validators.required, Validators.minLength(10)]),
       description: new FormControl(this.product.description, [Validators.required, Validators.minLength(20)]),
       undefinedStock: new FormControl(this.product.undefinedStock, [Validators.required, Validators.min(1)]),
       securityStock: new FormControl(this.product.securityStock, [Validators.required, Validators.min(1)]),
-      desactivadedStores: new FormControl(this.product.desactivatedStores),
+      desactivadedStores: new FormControl(this.product.desactivatedStores)
     });
+    
   }
 
   

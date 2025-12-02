@@ -27,7 +27,10 @@ export class Profile implements OnInit{
       if(user.username != null){
         this.signIn = true;
       }
-    })
+    });
+
+    
+
   }
 
   ngOnInit(): void {
@@ -37,5 +40,6 @@ export class Profile implements OnInit{
     this.statusModule.changeStatus(true, module);
     this.module = module;
     this.welcome = false;
+    this.statusModule.details.next(false);
   }
 }

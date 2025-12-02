@@ -6,11 +6,10 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class ModulesStatus {
   
-  profile: BehaviorSubject<boolean> = new BehaviorSubject(false);
   details: BehaviorSubject<boolean> = new BehaviorSubject(false);
-  productsModule: BehaviorSubject<boolean> = new BehaviorSubject(false);
-  ordersModule: BehaviorSubject<boolean> = new BehaviorSubject(false);
-  setsModule: BehaviorSubject<boolean> = new BehaviorSubject(false);
+  productsModule: BehaviorSubject<boolean> = new BehaviorSubject(true);
+  ordersModule: BehaviorSubject<boolean> = new BehaviorSubject(true);
+  setsModule: BehaviorSubject<boolean> = new BehaviorSubject(true);
   signIn: BehaviorSubject<boolean> = new BehaviorSubject(true);
   
   constructor(){
@@ -21,10 +20,8 @@ export class ModulesStatus {
     switch(module){
       case "signIn": 
         this.signIn.next(newStatus);
-        this.profile.next(true)
         break;
       case "profile": 
-        this.profile.next(newStatus);
         break;
       case "details":
         this.details.next(newStatus);
