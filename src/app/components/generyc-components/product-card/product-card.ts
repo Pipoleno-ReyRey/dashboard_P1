@@ -35,12 +35,8 @@ export class ProductCard implements OnInit{
   }
 
   details(){
-    console.log(this.modules.details.getValue());
-
     this.modules.productsModule.next(false);
     this.productService.product.next(this.product);
     this.modules.details.next(true);
-
-    console.log(this.modules.details.getValue());
   }
 }

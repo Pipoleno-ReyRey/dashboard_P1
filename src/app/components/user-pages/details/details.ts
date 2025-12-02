@@ -3,6 +3,8 @@ import { Product } from '../../../models/product';
 import { FormControl, FormGroup, NgModel, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ProductsService } from '../../../services/modules-services/products-service';
 import { ModulesStatus } from '../../../services/modules-status';
+import { Order } from '../../../models/order';
+import { Set } from '../../../models/set';
 
 @Component({
   selector: 'app-details',
@@ -13,6 +15,8 @@ import { ModulesStatus } from '../../../services/modules-status';
 export class Details implements OnInit{
 
   product!: Product;
+  order!: Order;
+  set!: Set;
   formData!: FormGroup;
   status!: boolean;
 
@@ -41,5 +45,6 @@ export class Details implements OnInit{
     
   }
 
+  
   
 }

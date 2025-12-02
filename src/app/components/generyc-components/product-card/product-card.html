@@ -1,6 +1,6 @@
 @if (status) {
-    <div class="card" style="width: 20rem; display: inline-block; margin: 5px;">
-        <img src="{{product.img}}" alt="" class="card-img-top" style="width: 10rem; height: 10rem;">
+    <div class="card" style="width: 25rem; display: inline-block; margin: 5px;">
+        <img src="{{product.img}}" class="card-img-top" width="400px" height="300px">
         <div class="card-body">
             <p>{{product.sku}}</p>
             <p>{{product.title}}</p>
@@ -10,11 +10,11 @@
                 <label class="form-check-label">Activo</label>
             </div>
             
-            <button style="border: 1px solid green; background-color: rgba(240, 248, 255, 0); width: 50px; height: 50px;" class="btn btn-outline-light">
+            <button class="btn btn-outline-light">
                 <img src="refresh.svg" width="30px" height="30px" (click)="update()">
             </button>
 
-            <button style="border: 1px solid green; background-color: rgba(240, 248, 255, 0); width: 50px; height: 50px; margin-left: 150px;" (click)="details()" class="btn btn-outline-light"> 
+            <button style="margin-left: 150px;" (click)="details()" class="btn btn-outline-light"> 
                 <img src="details.svg" width="30px" height="30px">
             </button>
             
