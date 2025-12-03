@@ -26,16 +26,15 @@ export class ProductsService {
 
   async search(param: string){
     await this.http.get<Product[]>(`http://localhost:6512/products/${param}`).subscribe(products => {
-
       this.products.next(products);;
-
-      
       this.productsCount.next(this.products.getValue().length);
     });
 
+    
+
   }
 
-  async updateProduct(product: Product){
+  async updateProduct(product: object){
     await this.http.put("http://localhost:6512/products/update", product);
   }
 }

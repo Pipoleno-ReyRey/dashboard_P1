@@ -7,7 +7,7 @@ import { Details } from "../../user-pages/details/details";
 
 @Component({
   selector: 'app-product-card',
-  imports: [ɵInternalFormsSharedModule, ReactiveFormsModule, FormsModule, Details],
+  imports: [ɵInternalFormsSharedModule, ReactiveFormsModule, FormsModule],
   templateUrl: './product-card.html',
   styleUrl: './product-card.scss',
 })

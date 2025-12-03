@@ -37,7 +37,6 @@ export class Profile implements OnInit{
   }
 
   viewModules(module: string){
-    this.statusModule.changeStatus(true, module);
     this.module = module;
     this.welcome = false;
     this.statusModule.details.next(false);

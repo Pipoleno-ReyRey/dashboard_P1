@@ -6,7 +6,7 @@ export class Product {
     bigItem!: boolean;
     borrado!: number;
     price!: number;
-    desactivatedStores!: string;
+    disabledShops!: string;
     group!: string;
     undefinedStock!: number;
     securityStock!: number;

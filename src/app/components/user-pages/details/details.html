@@ -1,20 +1,30 @@
 @if (status && product != null) {
-    <div style="width: 50dvb; margin: 10em; height: 40dvb;">
-        <header style="background-color: mediumseagreen; width: 100%;">
-
-        </header>
+    <div style="margin: 20px; margin-left: 10em;">
 
         <div>
-            <img src="{{product.img}}" width="300px" height="400px">
-            <p>sku: {{product.sku}}</p>
+            <img src="{{product.img}}" width="300px" height="500px">
+            <p>SKU: {{product.sku}}</p>
             <form [formGroup]="formData">
-                <label for="">Titulo</label>
-                <input type="text" formControlName="title">
+
+                <label for="title">Titulo</label>
+                <input type="text" formControlName="title" class="form-control" [value]="product.title">
+
+                <label for="description">Descripcion</label>
+                <input type="text" formControlName="description" class="form-control" [value]="product.description">
+
+                <label for="undefinedStock">Stock ilimitado</label>
+                <input type="checkbox" role="switch" [(ngModel)]="undefinedStock" class="form-control">
+                
+                <label for="securityStock">Stock de seguridad</label>
+                <input type="number" formControlName="securityStock" class="form-control" [value]="product.securityStock">
+                
+                <label for="disabledShops">Tiendas apagadas</label>
+                <input type="text" formControlName="disabledShops" class="form-control" [value]="product.disabledShops">
+
+                <button type="submit" (click)="updateProduct()" class="btn btn-outline-primary" style="margin-top: 1em;">   Actualizar  </button>
+
             </form>
         </div>
-
-        <footer>
-
-        </footer>
+        
     </div>
 }
